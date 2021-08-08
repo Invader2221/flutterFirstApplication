@@ -1,4 +1,4 @@
-import 'package:bring_it/src/buyer/buyerSuccessfulMessage.dart';
+import 'package:bring_it/src/delivery_person/category_select.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -263,7 +263,7 @@ class _DeliveryPersonLoginPageState extends State<DeliveryPersonLoginPage> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                          builder: (context) => BuyerSuccessMessage()),
+                          builder: (context) => CategorySelect()),
                     );
                   },
                 ),
@@ -292,7 +292,7 @@ class _DeliveryPersonLoginPageState extends State<DeliveryPersonLoginPage> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                          builder: (context) => BuyerSuccessMessage()),
+                          builder: (context) => CategorySelect()),
                     );
                   },
                 ),

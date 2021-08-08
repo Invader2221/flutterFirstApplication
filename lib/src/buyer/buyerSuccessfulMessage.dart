@@ -27,13 +27,13 @@ class _BuyerSuccessSplashState extends State<_BuyerSuccessSplash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 20), () {
+    Timer(Duration(seconds: 3), () {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => BuyerLoginPage()));
     });
   }
 
-  Widget _title2() {
+  Widget _title() {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
@@ -110,7 +110,7 @@ class _BuyerSuccessSplashState extends State<_BuyerSuccessSplash> {
                       SizedBox(
                         height: 80,
                       ),
-                      _title2(),
+                      _title(),
                     ],
                   ),
                 ),

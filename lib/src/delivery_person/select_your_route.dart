@@ -79,7 +79,7 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                width: 150,
+                width: 140,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xfff15a29),

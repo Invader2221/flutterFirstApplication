@@ -1,3 +1,4 @@
+import 'package:bring_it/src/buyer/available_delivery_people.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -212,7 +213,7 @@ class _BuyerHomePageState extends State<BuyerHomePage> {
             ),
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => BuyerHomePage()),
+                MaterialPageRoute(builder: (context) => AvailableDeliveryPeople()),
               );
             },
           ),

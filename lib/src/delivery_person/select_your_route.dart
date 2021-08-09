@@ -11,12 +11,10 @@ class SelectYourRoute extends StatefulWidget {
 }
 
 class _SelectYourRouteState extends State<SelectYourRoute> {
-
   static const _initialCameraPosition = CameraPosition(
     target: LatLng(6.795547586325061, 79.94084367623412),
     zoom: 15.5,
   );
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +25,7 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
             text: TextSpan(
                 text: 'Select Your ',
                 style: GoogleFonts.portLligatSans(
-                  textStyle: Theme
-                      .of(context)
-                      .textTheme
-                      .headline1,
+                  textStyle: Theme.of(context).textTheme.headline1,
                   fontSize: 30,
                   fontWeight: FontWeight.w700,
                   color: Color(0xffffffff),
@@ -39,10 +34,7 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
                   TextSpan(
                     text: 'Route',
                     style: GoogleFonts.portLligatSans(
-                      textStyle: Theme
-                          .of(context)
-                          .textTheme
-                          .headline1,
+                      textStyle: Theme.of(context).textTheme.headline1,
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
                       color: Color(0xfff15a29),
@@ -56,7 +48,7 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: InkWell(
                 child: Container(
                   width: 60,
@@ -76,10 +68,11 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
                 onTap: () {},
               ),
             ),
+            const Spacer(),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Container(
-                width: 140,
+                width: 190,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xfff15a29),
@@ -90,10 +83,7 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
                   child: Text(
                     'Done',
                     style: GoogleFonts.portLligatSans(
-                      textStyle: Theme
-                          .of(context)
-                          .textTheme
-                          .headline1,
+                      textStyle: Theme.of(context).textTheme.headline1,
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
                       color: Color(0xff000000),
@@ -101,8 +91,7 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
                   ),
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context) => SelectTime()),
+                      MaterialPageRoute(builder: (context) => SelectTime()),
                     );
                   },
                 ),
@@ -129,7 +118,7 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
         child: GoogleMap(
           myLocationButtonEnabled: false,
           zoomControlsEnabled: true,
-          initialCameraPosition:_initialCameraPosition,
+          initialCameraPosition: _initialCameraPosition,
         ),
       ),
     );

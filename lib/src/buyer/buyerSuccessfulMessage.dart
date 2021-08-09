@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:bring_it/src/buyer/buyerLogin.dart';
+import 'package:bring_it/src/buyer/buyer_home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,7 +29,7 @@ class _BuyerSuccessSplashState extends State<_BuyerSuccessSplash> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => BuyerLoginPage()));
+          .push(MaterialPageRoute(builder: (context) => BuyerHomePage()));
     });
   }
 

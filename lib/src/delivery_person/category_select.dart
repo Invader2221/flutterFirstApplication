@@ -71,7 +71,7 @@ class _CategorySelectState extends State<CategorySelect> {
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: InkWell(
                 child: Container(
                   width: 60,
@@ -91,10 +91,11 @@ class _CategorySelectState extends State<CategorySelect> {
                 onTap: () {},
               ),
             ),
+            const Spacer(),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Container(
-                width: 150,
+                width: 190,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xfff15a29),

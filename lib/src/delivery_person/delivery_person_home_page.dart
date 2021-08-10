@@ -1,26 +1,52 @@
-import 'package:bring_it/src/buyer/available_delivery_people.dart';
+import 'package:bring_it/src/delivery_person/food_item_table.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'deliverPersonSuccessfulMessage.dart';
 
-class BuyerHomePage extends StatefulWidget {
-  BuyerHomePage({Key? key}) : super(key: key);
+class DeliveryPersonHomePage extends StatefulWidget {
+  DeliveryPersonHomePage({Key? key}) : super(key: key);
 
   @override
-  _BuyerHomePageState createState() => _BuyerHomePageState();
+  _DeliveryPersonHomePageState createState() => _DeliveryPersonHomePageState();
 }
 
-class _BuyerHomePageState extends State<BuyerHomePage> {
-  Offset position = Offset(100, 100);
-  static const _initialCameraPosition = CameraPosition(
-    target: LatLng(6.795547586325061, 79.94084367623412),
-    zoom: 15.5,
-  );
+class _DeliveryPersonHomePageState extends State<DeliveryPersonHomePage> {
+  Offset position = Offset(380, 0);
+
+  Widget _deliveryPersonButton() {
+    return Center(
+      child: Container(
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Color(0xfff15a29),
+            shape: CircleBorder(),
+            minimumSize: Size.fromRadius(90),
+            shadowColor: Color(0xff000000),
+          ),
+          child: Text(
+            ' Update\non hand\n    Qty',
+            style: GoogleFonts.portLligatSans(
+              textStyle: Theme.of(context).textTheme.headline1,
+              fontSize: 27,
+              fontWeight: FontWeight.w700,
+              color: Color(0xff000000),
+            ),
+          ),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => FoodItemTable()),
+            );
+          },
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Color(0xff231f20),
           leading: Builder(
             builder: (context) => IconButton(
@@ -34,7 +60,7 @@ class _BuyerHomePageState extends State<BuyerHomePage> {
           ),
           actions: <Widget>[
             Padding(
-                padding: EdgeInsets.only(right: 20.0),
+                padding: EdgeInsets.only(right: 15.0),
                 child: GestureDetector(
                   onTap: () {},
                   child: Icon(
@@ -94,7 +120,6 @@ class _BuyerHomePageState extends State<BuyerHomePage> {
             ),
             Divider(height: 1, thickness: 1, color: Colors.white),
             Container(
-              width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               color: Colors.transparent,
               child: Column(
@@ -192,73 +217,89 @@ class _BuyerHomePageState extends State<BuyerHomePage> {
           ]),
         ),
       ),
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.black,
+                  offset: Offset(2, 4),
+                  blurRadius: 5,
+                  spreadRadius: 2)
+            ],
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xfffafafa), Color(0xffdbdbdb)]),
+          ),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Stack(
+              children: [
+                _deliveryPersonButton(),
+                Positioned(
+                  left: position.dx,
+                  top: position.dy,
+                  child: Draggable(
+                      feedback: Container(
+                          child: FloatingActionButton(
+                              child: Icon(
+                                Icons.doorbell_outlined,
+                                size: 40,
+                              ),
+                              onPressed: () {})),
+                      child: Container(
+                        child: FloatingActionButton(
+                            child: Icon(
+                              Icons.doorbell_outlined,
+                              size: 40,
+                            ),
+                            onPressed: () {}),
+                      ),
+                      childWhenDragging: Container(),
+                      onDragEnd: (details) {
+                        setState(() {
+                          position = details.offset;
+                        });
+                        print(position);
+                        print(position.dx);
+                        print(position.dy);
+                      }),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       bottomNavigationBar: BottomAppBar(
         color: Color(0xff231f20),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 132, vertical: 10),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Color(0xfff15a29),
+              primary: Colors.transparent,
+              elevation: 0,
               shape: StadiumBorder(),
-              minimumSize: Size.fromHeight(50),
               shadowColor: Color(0xff000000),
             ),
             child: Text(
-              'Done',
+              'Start',
               style: GoogleFonts.portLligatSans(
                 textStyle: Theme.of(context).textTheme.headline1,
-                fontSize: 30,
+                fontSize: 45,
                 fontWeight: FontWeight.w700,
-                color: Color(0xff000000),
+                color: Color(0xfff15a29),
               ),
             ),
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => AvailableDeliveryPeople()),
+                MaterialPageRoute(
+                    builder: (context) => DeliveryPersonSuccessMessage()),
               );
             },
           ),
         ),
-      ),
-      body: Stack(
-        children: [
-          GoogleMap(
-            myLocationButtonEnabled: false,
-            zoomControlsEnabled: true,
-            initialCameraPosition: _initialCameraPosition,
-          ),
-          Positioned(
-              left: position.dx,
-              top: position.dy,
-              child: Draggable(
-                  feedback: Container(
-                      child: FloatingActionButton(
-                          child: Icon(Icons.doorbell_outlined,size: 20,), onPressed: () {})),
-                  child: Container(
-                    child: FloatingActionButton(
-                        child: Icon(Icons.doorbell_outlined, size: 30,), onPressed: () {}),
-                  ),
-                  childWhenDragging: Container(),
-                  onDragEnd: (details) {
-                    setState(() {
-                      position = details.offset;
-                    });
-                    print(position);
-                    print(position.dx);
-                    print(position.dy);
-                  }),
-          ),
-          // Positioned(
-          //     bottom: 50,
-          //     right: 50,
-          //     child: Padding(
-          //       padding: const EdgeInsets.all(160.0),
-          //       child: Container(
-          //           alignment: Alignment.center,
-          //           color: Colors.redAccent,
-          //           child: Text('Hello')),
-          //     )),
-        ],
       ),
     );
   }

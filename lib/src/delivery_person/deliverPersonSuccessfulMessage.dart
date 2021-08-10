@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:bring_it/src/delivery_person/deliveryPersonLogin.dart';
+import 'package:bring_it/src/delivery_person/delivery_person_home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,9 +27,9 @@ class _DeliveryPersonSuccessSplashState extends State<_DeliveryPersonSuccessSpla
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 0), () {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => DeliveryPersonLoginPage()));
+          .push(MaterialPageRoute(builder: (context) => DeliveryPersonHomePage()));
     });
   }
 

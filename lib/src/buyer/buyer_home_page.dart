@@ -11,7 +11,7 @@ class BuyerHomePage extends StatefulWidget {
 }
 
 class _BuyerHomePageState extends State<BuyerHomePage> {
-  Offset position = Offset(100, 100);
+  Offset position = Offset(380, 0);
   static const _initialCameraPosition = CameraPosition(
     target: LatLng(6.795547586325061, 79.94084367623412),
     zoom: 15.5,

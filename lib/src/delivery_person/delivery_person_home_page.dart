@@ -1,3 +1,4 @@
+import 'package:bring_it/src/delivery_person/deliver_start_page.dart';
 import 'package:bring_it/src/delivery_person/food_item_table.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -295,7 +296,7 @@ class _DeliveryPersonHomePageState extends State<DeliveryPersonHomePage> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                    builder: (context) => DeliveryPersonSuccessMessage()),
+                    builder: (context) => DeliverStartPage()),
               );
             },
           ),

@@ -1,3 +1,4 @@
+import 'package:bring_it/src/buyer/selected_delivery_person.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -73,12 +74,9 @@ class _AvailableDeliveryPeopleState extends State<AvailableDeliveryPeople> {
           ),
         ),
         onPressed: () {
-
-          print('pressed');
-
-          // Navigator.of(context).push(
-          //   MaterialPageRoute(builder: (context) => BuyerLoginPage()),
-          // );
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => SelectedDeliveryPerson()),
+          );
         },
       ),
     );
@@ -88,6 +86,7 @@ class _AvailableDeliveryPeopleState extends State<AvailableDeliveryPeople> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(20),
           child: Padding(

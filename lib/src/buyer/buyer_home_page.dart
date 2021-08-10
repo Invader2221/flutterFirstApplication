@@ -94,8 +94,8 @@ class _BuyerHomePageState extends State<BuyerHomePage> {
             ),
             Divider(height: 1, thickness: 1, color: Colors.white),
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
+              // width: MediaQuery.of(context).size.width,
+              height: 650,
               color: Colors.transparent,
               child: Column(
                 children: <Widget>[

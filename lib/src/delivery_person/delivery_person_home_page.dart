@@ -121,7 +121,7 @@ class _DeliveryPersonHomePageState extends State<DeliveryPersonHomePage> {
             ),
             Divider(height: 1, thickness: 1, color: Colors.white),
             Container(
-              height: MediaQuery.of(context).size.height,
+              height: 650,
               color: Colors.transparent,
               child: Column(
                 children: <Widget>[

@@ -22,7 +22,7 @@ class _DeliverStartPageState extends State<DeliverStartPage> {
     return Container(
       color: Color(0xff231f20),
       child: Padding(
-        padding: const EdgeInsets.only(left: 120.0, right: 120.0, top: 40.0, bottom: 10),
+        padding: const EdgeInsets.only(left: 115.0, right: 115.0, top: 40.0, bottom: 10),
         child: Container(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(

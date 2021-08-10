@@ -43,6 +43,27 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
                 ])),
         backgroundColor: Color(0xff231f20),
       ),
+      body: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(0)),
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Colors.black,
+                offset: Offset(2, 4),
+                blurRadius: 5,
+                spreadRadius: 2)
+          ],
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0xfffafafa), Color(0xffdbdbdb)]),
+        ),
+        child: GoogleMap(
+          myLocationButtonEnabled: false,
+          zoomControlsEnabled: true,
+          initialCameraPosition: _initialCameraPosition,
+        ),
+      ),
       bottomNavigationBar: BottomAppBar(
         color: Color(0xff231f20),
         child: Row(
@@ -98,27 +119,6 @@ class _SelectYourRouteState extends State<SelectYourRoute> {
               ),
             ),
           ],
-        ),
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(0)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: Colors.black,
-                offset: Offset(2, 4),
-                blurRadius: 5,
-                spreadRadius: 2)
-          ],
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Color(0xfffafafa), Color(0xffdbdbdb)]),
-        ),
-        child: GoogleMap(
-          myLocationButtonEnabled: false,
-          zoomControlsEnabled: true,
-          initialCameraPosition: _initialCameraPosition,
         ),
       ),
     );

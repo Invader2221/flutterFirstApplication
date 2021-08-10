@@ -28,7 +28,7 @@ class _DeliveryPersonHomePageState extends State<DeliveryPersonHomePage> {
             style: GoogleFonts.portLligatSans(
               textStyle: Theme.of(context).textTheme.headline1,
               fontSize: 27,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w900,
               color: Color(0xff000000),
             ),
           ),

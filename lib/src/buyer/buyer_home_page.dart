@@ -214,7 +214,8 @@ class _BuyerHomePageState extends State<BuyerHomePage> {
             ),
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => AvailableDeliveryPeople()),
+                MaterialPageRoute(
+                    builder: (context) => AvailableDeliveryPeople()),
               );
             },
           ),
@@ -228,25 +229,37 @@ class _BuyerHomePageState extends State<BuyerHomePage> {
             initialCameraPosition: _initialCameraPosition,
           ),
           Positioned(
-              left: position.dx,
-              top: position.dy,
-              child: Draggable(
-                  feedback: Container(
-                      child: FloatingActionButton(
-                          child: Icon(Icons.doorbell_outlined,size: 20,), onPressed: () {})),
-                  child: Container(
+            left: position.dx,
+            top: position.dy,
+            child: Draggable(
+                feedback: Container(
                     child: FloatingActionButton(
-                        child: Icon(Icons.doorbell_outlined, size: 30,), onPressed: () {}),
-                  ),
-                  childWhenDragging: Container(),
-                  onDragEnd: (details) {
-                    setState(() {
-                      position = details.offset;
-                    });
-                    print(position);
-                    print(position.dx);
-                    print(position.dy);
-                  }),
+                        backgroundColor: Color(0xfff15a29),
+                        child: Icon(
+                          Icons.doorbell_outlined,
+                          size: 30,
+                        ),
+                        onPressed: () {})),
+                child: Container(
+                  child: FloatingActionButton(
+                      backgroundColor: Color(0xfff15a29),
+                      child: Icon(
+                        Icons.doorbell_outlined,
+                        size: 30,
+                      ),
+                      onPressed: () {}),
+                ),
+                childWhenDragging: Container(
+
+                ),
+                onDragEnd: (details) {
+                  setState(() {
+                    position = details.offset;
+                  });
+                  print(position);
+                  print(position.dx);
+                  print(position.dy);
+                }),
           ),
           // Positioned(
           //     bottom: 50,

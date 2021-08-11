@@ -239,6 +239,11 @@ class _DeliveryPersonHomePageState extends State<DeliveryPersonHomePage> {
             height: MediaQuery.of(context).size.height,
             child: Stack(
               children: [
+                Container(
+                  decoration: new BoxDecoration(
+                    color: Color(0xffdbdbdb)
+                  ),
+                ),
                 _deliveryPersonButton(),
                 Positioned(
                   left: position.dx,

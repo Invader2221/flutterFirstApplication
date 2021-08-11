@@ -4,25 +4,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DeliveryPersonSuccessMessage extends StatelessWidget {
-  const DeliveryPersonSuccessMessage({Key? key}) : super(key: key);
+// class DeliveryPersonSuccessMessage extends StatelessWidget {
+//   const DeliveryPersonSuccessMessage({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: _DeliveryPersonSuccessSplash(),
+//     );
+//   }
+// }
+// class DeliveryPersonSuccessMessage extends StatefulWidget {
+//   @override
+//   _DeliveryPersonSuccessSplash createState() =>
+//       _DeliveryPersonSuccessSplash();
+// }
 
+class DeliveryPersonSuccessMessage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: _DeliveryPersonSuccessSplash(),
-    );
-  }
+  _DeliveryPersonSuccessSplashState createState() =>
+      _DeliveryPersonSuccessSplashState();
 }
 
-class _DeliveryPersonSuccessSplash extends StatefulWidget {
-  const _DeliveryPersonSuccessSplash({Key? key}) : super(key: key);
-
-  @override
-  _DeliveryPersonSuccessSplashState createState() => _DeliveryPersonSuccessSplashState();
-}
-
-class _DeliveryPersonSuccessSplashState extends State<_DeliveryPersonSuccessSplash> {
+class _DeliveryPersonSuccessSplashState extends State<DeliveryPersonSuccessMessage> {
   @override
   void initState() {
     // TODO: implement initState

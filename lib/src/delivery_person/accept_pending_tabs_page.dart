@@ -27,10 +27,6 @@ class _AcceptPendingTabsPageState extends State<AcceptPendingTabsPage> {
                   indicatorRadius: 0,
                   indicatorColor: Color(0xfff15a29),
                   tabBarIndicatorSize: TabBarIndicatorSize.tab,
-                  // Other flags
-                  // indicatorRadius: 1,
-                  // insets: EdgeInsets.all(1),
-                  // padding: EdgeInsets.all(10)
                 ),
                 tabs: [
                   Tab(

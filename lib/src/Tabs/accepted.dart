@@ -1,14 +1,22 @@
+import 'package:bring_it/src/Tabs/accepted_tab_designer.dart';
 import 'package:flutter/material.dart';
 
-class Accepted extends StatelessWidget {
+class Accepted extends StatefulWidget {
+  Accepted({Key? key}) : super(key: key);
+
+  @override
+  _AcceptedState createState() => _AcceptedState();
+}
+
+class _AcceptedState extends State<Accepted> {
+  // List<Item> _books = generateItems(8);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      child: Center(
-        child: Text(
-          "Accepted",
-          style: TextStyle(fontSize: 24),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          child: AcceptedTabDesigner(),
         ),
       ),
     );

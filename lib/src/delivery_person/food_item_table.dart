@@ -67,9 +67,6 @@ class _FoodItemTableState extends State<FoodItemTable> {
                 key: _editableKey,
                 columns: cols,
                 rows: rows,
-                zebraStripe: false,
-                stripeColor1: Colors.red,
-                stripeColor2: Colors.blueAccent,
                 onRowSaved: (value) {
                   print(value);
                 },
@@ -96,7 +93,6 @@ class _FoodItemTableState extends State<FoodItemTable> {
                 thVertAlignment: CrossAxisAlignment.end,
                 thPaddingBottom: 3,
                 showSaveIcon: false,
-                saveIconColor: Colors.black,
                 showCreateButton: false,
                 tdAlignment: TextAlign.left,
                 tdEditableMaxLines: 100,

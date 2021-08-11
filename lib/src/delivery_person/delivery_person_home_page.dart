@@ -1,3 +1,4 @@
+import 'package:bring_it/src/Tabs/themes.dart';
 import 'package:bring_it/src/delivery_person/deliver_start_page.dart';
 import 'package:bring_it/src/delivery_person/food_item_table.dart';
 import 'package:flutter/material.dart';
@@ -245,18 +246,24 @@ class _DeliveryPersonHomePageState extends State<DeliveryPersonHomePage> {
                   child: Draggable(
                       feedback: Container(
                           child: FloatingActionButton(
+                              backgroundColor: Color(0xfff15a29),
                               child: Icon(
                                 Icons.doorbell_outlined,
-                                size: 40,
+                                size: 30,
                               ),
                               onPressed: () {})),
                       child: Container(
                         child: FloatingActionButton(
+                            backgroundColor: Color(0xfff15a29),
                             child: Icon(
                               Icons.doorbell_outlined,
-                              size: 40,
+                              size: 30,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) => Themes()),
+                              );
+                            }),
                       ),
                       childWhenDragging: Container(),
                       onDragEnd: (details) {

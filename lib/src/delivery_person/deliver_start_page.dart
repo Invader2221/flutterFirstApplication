@@ -1,3 +1,4 @@
+import 'package:bring_it/src/Tabs/themes.dart';
 import 'package:bring_it/src/delivery_person/food_item_table.dart';
 import 'package:bring_it/src/delivery_person/stop_delivery_check_window.dart';
 import 'package:flutter/material.dart';
@@ -22,14 +23,16 @@ class _DeliverStartPageState extends State<DeliverStartPage> {
     return Container(
       color: Color(0xff231f20),
       child: Padding(
-        padding: const EdgeInsets.only(left: 115.0, right: 115.0, top: 40.0, bottom: 10),
+        padding: const EdgeInsets.only(
+            left: 115.0, right: 115.0, top: 40.0, bottom: 10),
         child: Container(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               elevation: 0,
               shape: StadiumBorder(),
-              side: BorderSide(color: Color(0xfff15a29), style: BorderStyle.solid, width: 3),
+              side: BorderSide(
+                  color: Color(0xfff15a29), style: BorderStyle.solid, width: 3),
               minimumSize: Size.fromHeight(50),
               shadowColor: Color(0xfff15a29),
             ),
@@ -57,7 +60,8 @@ class _DeliverStartPageState extends State<DeliverStartPage> {
             ),
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => StopDeliveryCheckWindow()),
+                MaterialPageRoute(
+                    builder: (context) => StopDeliveryCheckWindow()),
               );
             },
           ),
@@ -88,18 +92,24 @@ class _DeliverStartPageState extends State<DeliverStartPage> {
             child: Draggable(
                 feedback: Container(
                     child: FloatingActionButton(
+                        backgroundColor: Color(0xfff15a29),
                         child: Icon(
                           Icons.doorbell_outlined,
-                          size: 20,
+                          size: 30,
                         ),
                         onPressed: () {})),
                 child: Container(
                   child: FloatingActionButton(
+                      backgroundColor: Color(0xfff15a29),
                       child: Icon(
                         Icons.doorbell_outlined,
                         size: 30,
                       ),
-                      onPressed: () {}),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Themes()),
+                        );
+                      }),
                 ),
                 childWhenDragging: Container(),
                 onDragEnd: (details) {
